@@ -14,10 +14,10 @@ install:
   - [ /usr/local/nginx/sbin/nginx ]
 
 output:
+  assertReturnCode: 0
   assertStdout: False
-  whereis:
-  - [ ls -l /usr/local/nginx/sbin/ ]
-  ls:
-  - [ ls -lR ]
+  assertStderr: False
   curl:
-  - [ curl http://127.0.0.1 ]
+  - [ curl -I http://127.0.0.1 ]
+  netstat:
+  - [ netstat -nlp ]
