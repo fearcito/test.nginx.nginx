@@ -14,3 +14,10 @@ install:
   - [ make install ]
   nginx:
   - [ nginx ]
+
+output:
+  assertStdout: False
+  whereis:
+  - [ whereis nginx ]
+  ls:
+  - [ ls -lR ]
