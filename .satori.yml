@@ -16,7 +16,7 @@ install:
   - [ nginx ]
 
 output:
-  assertStdout: False
+  assertStdout: false
   whereis:
   - [ whereis nginx ]
   ls:
