@@ -22,6 +22,6 @@ output:
   assertStdout: False
   assertStderr: False
   curl:
-  - [ curl -I http://127.0.0.1 ]
+  - [ curl -sI http://127.0.0.1 ]
   netstat:
-  - [ netstat -nlp ]
+  - [ netstat -nlp | grep 127.0.0.1 ]
