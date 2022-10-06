@@ -10,7 +10,7 @@ install:
   - [ ./configure --without-http_empty_gif_module ]
   make:
   - [ make ]
-  make install
+  make_install:
   - [ make install ]
   nginx:
   - [ nginx ]
