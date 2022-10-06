@@ -18,6 +18,6 @@ install:
 output:
   assertStdout: False
   whereis:
-  - [ ls -l /usr/local/nginx ]
+  - [ ls -l /usr/local/nginx/sbin/ ]
   ls:
   - [ ls -lR ]
