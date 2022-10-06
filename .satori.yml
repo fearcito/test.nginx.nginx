@@ -3,7 +3,7 @@
 install:
   assertReturnCode: 0
   tools:
-  - [ apt install -y netstat ]
+  - [ apt install -y net-tools ]
   dependencies:
   - [ apt install -y build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev ]
   #configure:
