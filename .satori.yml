@@ -13,7 +13,7 @@ install:
   make_install:
   - [ make install ]
   nginx:
-  - [ nginx ]
+  - [ /usr/local/nginx/sbin/nginx ]
 
 output:
   assertStdout: False
