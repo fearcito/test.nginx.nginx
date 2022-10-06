@@ -6,9 +6,7 @@ install:
   - [ apt install -y net-tools ]
   dependencies:
   - [ apt install -y build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev ]
-  #configure:
-  #- [ ./auto/configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --with-pcre  --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_image_filter_module=dynamic --modules-path=/etc/nginx/modules --with-http_v2_module --with-stream=dynamic --with-http_addition_module --with-http_mp4_module ]
-  configure2:
+  configure:
   - [ ./auto/configure ]
   make:
   - [ make ]
@@ -17,21 +15,14 @@ install:
   nginx:
   - [ /usr/local/nginx/sbin/nginx ]
 
-output:
-  assertReturnCode: 0
-  assertStdout: False
-  assertStderr: False
-  curl:
-  - [ curl -sI http://127.0.0.1 ]
-  netstat:
-  - [ netstat -nlp | grep LISTEN ]
-
 netstat:
   assertStdoutEqual: "2"
   listen:
   - [ netstat -nlp | grep LISTEN | wc -l ]
   
 curl:
+  assertReturnCode: 0
+  assertStderr: False
   assertStdoutContains: "200 OK"
   localhost:
   - [ curl -sI http://127.0.0.1 ]
