@@ -24,4 +24,14 @@ output:
   curl:
   - [ curl -sI http://127.0.0.1 ]
   netstat:
+  - [ netstat -nlp | grep LISTEN ]
+
+netstat:
+  assertStdout: "2"
+  listen:
   - [ netstat -nlp | grep LISTEN | wc -l ]
+  
+curl:
+  assertStdout: "200 OK"
+  localhost:
+  - [ curl -sI http://127.0.0.1 ]
