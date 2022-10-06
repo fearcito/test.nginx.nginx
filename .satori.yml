@@ -27,11 +27,11 @@ output:
   - [ netstat -nlp | grep LISTEN ]
 
 netstat:
-  assertStdout: "2"
+  assertStdoutEqual: "2"
   listen:
   - [ netstat -nlp | grep LISTEN | wc -l ]
   
 curl:
-  assertStdout: "200 OK"
+  assertStdoutContains: "200 OK"
   localhost:
   - [ curl -sI http://127.0.0.1 ]
