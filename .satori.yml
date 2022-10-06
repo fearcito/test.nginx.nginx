@@ -24,4 +24,4 @@ output:
   curl:
   - [ curl -sI http://127.0.0.1 ]
   netstat:
-  - [ netstat -nlp | grep 127.0.0.1 ]
+  - [ netstat -nlp | grep LISTEN | wc -l ]
