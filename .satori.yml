@@ -18,6 +18,6 @@ install:
 output:
   assertStdout: False
   whereis:
-  - [ whereis nginx ]
+  - [ ls -l /usr/local/nginx ]
   ls:
   - [ ls -lR ]
